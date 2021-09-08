@@ -1,5 +1,4 @@
 {
-	"private": "true",
 	"name": "floxum",
 	"description": "SocketIO connector for Strapi applications",
 	"license": "MIT",
