@@ -1,0 +1,13 @@
+{
+	"private": "true",
+	"name": "floxum",
+	"description": "SocketIO connector for Strapi applications",
+	"license": "MIT",
+	"author": {
+		"email": "xencodes@icloud.com",
+		"name": "xencodes"
+	},
+	"devDependencies": {
+		"lerna": "^4.0.0"
+	}
+}
