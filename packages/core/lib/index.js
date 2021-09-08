@@ -1,6 +1,6 @@
 const socketio = require('socket.io')
 
-const main = (strapi) => {
+const main = (strapi, log = false) => {
 	if (!strapi) {
 		console.error("Strapi couldn't be found")
 		return
@@ -16,19 +16,15 @@ const main = (strapi) => {
 	})
 
 	io.on('connection', (socket) => {
-		console.log('\nconnected', socket.id)
+		if (log) {
+			console.log(socket.id, 'connected')
+		}
 
-		const modules = ['pong', 'services', 'authenticate']
+		const modules = ['pong', 'services', 'login', 'authenticate']
 
 		modules.map((i) => {
-			console.log(`loading module: ${i}`)
 			require(`./modules/${i}`)(strapi, socket)
 		})
-
-		setTimeout(
-			() => socket.emit('fx-auth-resolve', { data: 'something' }),
-			4000
-		)
 	})
 }
 
