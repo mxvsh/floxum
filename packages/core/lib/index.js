@@ -25,11 +25,6 @@ const main = (strapi, log = false) => {
 		modules.map((i) => {
 			require(`./modules/${i}`)(strapi, socket)
 		})
-
-		setTimeout(
-			() => socket.emit('fx-auth-resolve', { data: 'something' }),
-			4000
-		)
 	})
 }
 
