@@ -20,7 +20,7 @@ const main = (strapi, log = false) => {
 			console.log(socket.id, 'connected')
 		}
 
-		const modules = ['pong', 'services', 'authenticate']
+		const modules = ['pong', 'services', 'login', 'authenticate']
 
 		modules.map((i) => {
 			require(`./modules/${i}`)(strapi, socket)
