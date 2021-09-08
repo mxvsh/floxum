@@ -8,6 +8,7 @@
 		"name": "xencodes"
 	},
 	"devDependencies": {
+		"eslint": "^7.32.0",
 		"lerna": "^4.0.0"
 	}
 }
