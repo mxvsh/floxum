@@ -1,10 +1,15 @@
 async function services(name, method, params) {
 	const socket = this.socket
 
+	const _fx = {
+		jwt: localStorage.getItem('fx-jwt'),
+	}
+
 	socket.emit('fx-service', {
 		name,
 		method,
 		params,
+		_fx,
 	})
 
 	return new Promise((resolve, reject) => {
