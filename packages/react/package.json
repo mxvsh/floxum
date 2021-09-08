@@ -1,7 +1,7 @@
 {
 	"name": "@floxum/react",
 	"description": "React module for Floxum",
-	"version": "0.0.1-alpha.0",
+	"version": "0.0.2-alpha.0",
 	"main": "lib/index.js",
 	"license": "MIT",
 	"publishConfig": {
