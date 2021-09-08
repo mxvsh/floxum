@@ -1,15 +1,5 @@
 const socketio = require('socket.io')
 
-function Floxum(strapi, socket) {
-	const modules = ['pong', 'services']
-
-	// load each modules
-	modules.map((i) => {
-		console.log(`loading module: ${i}`)
-		require(`./core/${i}`)(strapi, socket)
-	})
-}
-
 const main = (strapi) => {
 	if (!strapi) {
 		console.error("Strapi couldn't be found")
@@ -28,7 +18,17 @@ const main = (strapi) => {
 	io.on('connection', (socket) => {
 		console.log('\nconnected', socket.id)
 
-		new Floxum(strapi, socket)
+		const modules = ['pong', 'services', 'authenticate']
+
+		modules.map((i) => {
+			console.log(`loading module: ${i}`)
+			require(`./modules/${i}`)(strapi, socket)
+		})
+
+		setTimeout(
+			() => socket.emit('fx-auth-resolve', { data: 'something' }),
+			4000
+		)
 	})
 }
 
