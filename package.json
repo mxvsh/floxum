@@ -6,13 +6,9 @@
 		"email": "xencodes@icloud.com",
 		"name": "xencodes"
 	},
-	"scripts": {
-		"release": "standard-version"
-	},
 	"devDependencies": {
 		"eslint": "^7.32.0",
-		"lerna": "^4.0.0",
-		"standard-version": "^9.3.1"
+		"lerna": "^4.0.0"
 	},
 	"version": "1.0.2",
 	"dependencies": {
