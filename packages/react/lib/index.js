@@ -7,6 +7,7 @@ const services = require('./functions/services')
 const error = require('./functions/error')
 const authenticate = require('./functions/authenticate')
 const login = require('./functions/login')
+const register = require('./functions/register')
 
 function Floxum(socket) {
 	this.socket = socket
@@ -19,6 +20,7 @@ Floxum.prototype.ping = ping
 Floxum.prototype.services = services
 Floxum.prototype.onError = error
 Floxum.prototype.login = login
+Floxum.prototype.register = register
 Floxum.prototype.authenticate = authenticate
 
 // main function
