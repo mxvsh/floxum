@@ -9,6 +9,7 @@ const main = (strapi, log = false) => {
 	// start socket server with strapi
 
 	const io = socketio(strapi.server, {
+		allowEIO3: true,
 		cors: {
 			origin: '*',
 			methods: ['GET', 'POST'],
