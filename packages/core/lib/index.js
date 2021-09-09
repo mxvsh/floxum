@@ -1,6 +1,8 @@
 const socketio = require('socket.io')
 
-const main = (strapi, log = false) => {
+const main = (strapi, config = {}) => {
+	const { log = false, origin = '*' } = config
+
 	if (!strapi) {
 		console.error("Strapi couldn't be found")
 		return
@@ -11,7 +13,7 @@ const main = (strapi, log = false) => {
 	const io = socketio(strapi.server, {
 		allowEIO3: true,
 		cors: {
-			origin: '*',
+			origin,
 			methods: ['GET', 'POST'],
 		},
 	})
