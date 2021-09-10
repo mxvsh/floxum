@@ -109,12 +109,12 @@ floxum.login({ identifier: 'xxxxx', password: '****'})
 
 ## authenticate
 
-This function can be used to get the currently logged in user data, using token from `localStorage`
+This function can be used to get the currently logged in user's data, using token from `localStorage`
 **Example**:
 ```js
-floxum.login({ identifier: 'xxxxx', password: '****'})
+floxum.authenticate()
 	.then(data => {
-		// data: jwt and others values
+		// data: user data and others values
 	})
 	.catch(err => {
 		// err: Strapi error
@@ -122,7 +122,8 @@ floxum.login({ identifier: 'xxxxx', password: '****'})
 ```
 ## services
 
-This function can be used to execute services for any API registered on Strapi.
+This function can be used to execute services for any API registered on Strapi. The following example will create a new entry in "todo" collection.
+You can also execute, `find`, `update` or `delete` services.
 **Example**:
 ```js
 floxum.services('todo', 'create', { todo: 'Grab coffee' })
