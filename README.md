@@ -11,7 +11,7 @@ Floxum is a Socket IO connector for Strapi
 ## Installation
 
 
-> The installation will also work for the projects which are already using Strapi.
+> The installation will also work for existing Strapi project.
 
 
 ### Step 1
