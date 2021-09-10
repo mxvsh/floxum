@@ -6,6 +6,19 @@ Floxum is a Socket IO connector for Strapi
 
 ![Artboard](https://user-images.githubusercontent.com/31907722/132536324-df8029d9-8f10-4041-a779-fedb872283a6.png)
 
+## Example
+
+```js
+floxum.services('todo', 'find', { _limit: 1 }).then((data) => {
+   console.log(data)
+})
+```
+
+```
+floxum.services('todo', 'delete', { id: 1 }).then((data) => {
+   console.log("Successfully deleted todo")
+})
+```
 
 
 ## Installation
